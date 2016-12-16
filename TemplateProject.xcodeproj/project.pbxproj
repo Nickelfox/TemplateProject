@@ -12,6 +12,7 @@
 		6D61B9061E03C42D00BC1722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D61B8FA1E03C42D00BC1722 /* LaunchScreen.storyboard */; };
 		6D61B9071E03C42D00BC1722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D61B8FC1E03C42D00BC1722 /* Main.storyboard */; };
 		6D61B9091E03C42D00BC1722 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D61B9001E03C42D00BC1722 /* ViewController.swift */; };
+		6DD203871E03CCDA003DD7A3 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD203861E03CCDA003DD7A3 /* Loader.swift */; };
 		F1D15E2DFA7647717642224D /* Pods_TemplateProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE2CD266A71586234445B2E /* Pods_TemplateProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		6D61B8FD1E03C42D00BC1722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D61B8FE1E03C42D00BC1722 /* TemplateProject-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TemplateProject-Info.plist"; sourceTree = "<group>"; };
 		6D61B9001E03C42D00BC1722 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6DD203861E03CCDA003DD7A3 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Loader.swift; path = Common/Loader/Loader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,26 @@
 		6D61B8FF1E03C42D00BC1722 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6DD203841E03CCB5003DD7A3 /* Common */,
 				6D61B9001E03C42D00BC1722 /* ViewController.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		6DD203841E03CCB5003DD7A3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6DD203851E03CCC1003DD7A3 /* Loader */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		6DD203851E03CCC1003DD7A3 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				6DD203861E03CCDA003DD7A3 /* Loader.swift */,
+			);
+			name = Loader;
 			sourceTree = "<group>";
 		};
 		6DF552731E03C70B0044CF0D /* Frameworks */ = {
@@ -238,6 +257,7 @@
 			files = (
 				6D61B9091E03C42D00BC1722 /* ViewController.swift in Sources */,
 				6D61B9041E03C42D00BC1722 /* AppDelegate.swift in Sources */,
+				6DD203871E03CCDA003DD7A3 /* Loader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
