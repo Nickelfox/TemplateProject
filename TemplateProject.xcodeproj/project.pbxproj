@@ -22,9 +22,6 @@
 		6D61B8FD1E03C42D00BC1722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D61B8FE1E03C42D00BC1722 /* TemplateProject-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TemplateProject-Info.plist"; sourceTree = "<group>"; };
 		6D61B9001E03C42D00BC1722 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6DF552741E03C70B0044CF0D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6DF552761E03C71A0044CF0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6DF552781E03C7200044CF0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +92,6 @@
 		6DF552731E03C70B0044CF0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6DF552781E03C7200044CF0D /* Foundation.framework */,
-				6DF552761E03C71A0044CF0D /* UIKit.framework */,
-				6DF552741E03C70B0044CF0D /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
