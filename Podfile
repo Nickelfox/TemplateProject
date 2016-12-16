@@ -7,4 +7,5 @@ use_frameworks!
 
 target :TemplateProject do
 	pod "FLUtilities", :git => 'https://github.com/Nickelfox/FLUtilities.git'
+	pod 'MBProgressHUD', '~> 1.0'
 end

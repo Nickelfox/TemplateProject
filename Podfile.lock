@@ -1,8 +1,10 @@
 PODS:
   - FLUtilities (0.1.0)
+  - MBProgressHUD (1.0.0)
 
 DEPENDENCIES:
   - FLUtilities (from `https://github.com/Nickelfox/FLUtilities.git`)
+  - MBProgressHUD (~> 1.0)
 
 EXTERNAL SOURCES:
   FLUtilities:
@@ -15,7 +17,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   FLUtilities: 1b101734a35e894fd019e3fe6b430214c8fa3186
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
-PODFILE CHECKSUM: eeda6732d1eeb769e0edfc5deb1d86b6bcfcbbf0
+PODFILE CHECKSUM: 90e45ee8f16b5a8bd1dc3d62f3a675d73aca90e0
 
 COCOAPODS: 1.1.0.rc.2
