@@ -1,24 +1,37 @@
 PODS:
+  - FLLogs (0.1.0):
+    - XCGLogger (~> 4.0)
   - FLUtilities (0.1.0)
   - MBProgressHUD (1.0.0)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
+  - FLLogs (from `https://github.com/Nickelfox/FLLogs.git`)
   - FLUtilities (from `https://github.com/Nickelfox/FLUtilities.git`)
   - MBProgressHUD (~> 1.0)
 
 EXTERNAL SOURCES:
+  FLLogs:
+    :git: https://github.com/Nickelfox/FLLogs.git
   FLUtilities:
     :git: https://github.com/Nickelfox/FLUtilities.git
 
 CHECKOUT OPTIONS:
+  FLLogs:
+    :commit: 99ec6c4bfe26de9c8000348e0523642f9a78f8f0
+    :git: https://github.com/Nickelfox/FLLogs.git
   FLUtilities:
     :commit: a030c5bc1b4d2b704772cad854c5a2a223b5b3f8
     :git: https://github.com/Nickelfox/FLUtilities.git
 
 SPEC CHECKSUMS:
+  FLLogs: b22371b46c3662bdbd17a98007258782a7c1d96e
   FLUtilities: 1b101734a35e894fd019e3fe6b430214c8fa3186
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 90e45ee8f16b5a8bd1dc3d62f3a675d73aca90e0
+PODFILE CHECKSUM: 4439250015ad5757e3d4be2f86b0d8a04f99657d
 
 COCOAPODS: 1.1.0.rc.2
