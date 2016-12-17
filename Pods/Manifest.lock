@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.2.0)
   - FLLogs (0.1.0):
     - XCGLogger (~> 4.0)
   - FLUtilities (0.1.0)
@@ -8,6 +9,7 @@ PODS:
   - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.0)
   - FLLogs (from `https://github.com/Nickelfox/FLLogs.git`)
   - FLUtilities (from `https://github.com/Nickelfox/FLUtilities.git`)
   - MBProgressHUD (~> 1.0)
@@ -27,11 +29,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/Nickelfox/FLUtilities.git
 
 SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   FLLogs: b22371b46c3662bdbd17a98007258782a7c1d96e
   FLUtilities: 1b101734a35e894fd019e3fe6b430214c8fa3186
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 4439250015ad5757e3d4be2f86b0d8a04f99657d
+PODFILE CHECKSUM: 27a6de27ddc1289b42dcbcf7a56013b105a2ef4d
 
 COCOAPODS: 1.1.0.rc.2
