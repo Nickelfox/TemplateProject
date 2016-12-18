@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIView {
 	
-	func image() -> UIImage {
+	func imageFromView() -> UIImage {
 		UIGraphicsBeginImageContext(self.frame.size)
 		self.layer.render(in: UIGraphicsGetCurrentContext()!)
 		let image = UIGraphicsGetImageFromCurrentImageContext()

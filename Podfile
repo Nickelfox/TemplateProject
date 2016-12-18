@@ -9,6 +9,7 @@ target :TemplateProject do
 	pod "FLUtilities", :git => 'https://github.com/Nickelfox/FLUtilities.git'
 	pod "FLLogs", :git => 'https://github.com/Nickelfox/FLLogs.git'
 	pod 'MBProgressHUD', '~> 1.0'
+	pod 'SDWebImage', '~> 3.8'
 end
 
 target :Network do
