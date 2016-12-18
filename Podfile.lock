@@ -25,7 +25,7 @@ CHECKOUT OPTIONS:
     :commit: 99ec6c4bfe26de9c8000348e0523642f9a78f8f0
     :git: https://github.com/Nickelfox/FLLogs.git
   FLUtilities:
-    :commit: a030c5bc1b4d2b704772cad854c5a2a223b5b3f8
+    :commit: 4f7457a89bfe281e1bd77dccbee7410a865a423c
     :git: https://github.com/Nickelfox/FLUtilities.git
 
 SPEC CHECKSUMS:
