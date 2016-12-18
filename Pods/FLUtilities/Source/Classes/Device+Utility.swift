@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIDevice {
+public extension UIDevice {
 	static var deviceSpec: String {
 		return self.current.modelName
 	}

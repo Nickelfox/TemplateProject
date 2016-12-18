@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSObject {
+public extension NSObject {
 	
 	class func className() -> String {
 		let className = (NSStringFromClass(self) as String).components(separatedBy: ".").last! as String

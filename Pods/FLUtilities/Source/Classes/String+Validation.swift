@@ -12,7 +12,7 @@ private let kAlphabeticRegex = "[a-zA-Z\\s]+"
 private let kAlphaNumericRegex = "[a-zA-Z0-9\\s]+"
 private let kEmailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
 
-extension String {
+public extension String {
 	
 	fileprivate func matchRegex(regex: String) -> Bool {
 		let predicate = NSPredicate(format: "SELF MATCHES %@", regex)

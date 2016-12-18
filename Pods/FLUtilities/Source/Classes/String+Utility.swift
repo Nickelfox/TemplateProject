@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
 
 	func capitalizingFirstLetter() -> String {
 		let first = String(characters.prefix(1)).capitalized

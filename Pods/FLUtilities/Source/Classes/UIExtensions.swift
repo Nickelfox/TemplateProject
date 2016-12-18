@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
 	
 	func addAndFitSubview(view: UIView) {
 		view.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +22,7 @@ extension UIView {
 	
 }
 
-extension UITableView {
+public extension UITableView {
 	
 	@IBInspectable var backgroundViewColor: UIColor? {
 		set {
@@ -44,7 +44,7 @@ extension UITableView {
 	
 }
 
-extension UIScrollView {
+public extension UIScrollView {
 	
 	func preparePaintedPullingHeader(color: UIColor) {
 		let mainScreen = UIScreen.main
@@ -57,7 +57,7 @@ extension UIScrollView {
 	
 }
 
-extension UICollectionView {
+public extension UICollectionView {
 	
 	@IBInspectable var backgroundViewColor: UIColor? {
 		set {
@@ -79,7 +79,7 @@ extension UICollectionView {
 	
 }
 
-extension UITableViewCell {
+public extension UITableViewCell {
 	
 	@IBInspectable var selectedBackgroundViewColor: UIColor? {
 		set {
@@ -104,7 +104,7 @@ extension UITableViewCell {
 }
 
 
-extension UIView {
+public extension UIView {
 	
 	func roundedCorner(radius: CGFloat) {
 		self.clipsToBounds = true
@@ -120,7 +120,7 @@ extension UIView {
 	}
 }
 
-extension UIView {
+public extension UIView {
 	
 	func applyShadow(
 		apply: Bool,
@@ -143,7 +143,7 @@ extension UIView {
 		self.layer.masksToBounds = false
 	}
 }
-extension UIImage {
+public extension UIImage {
 	
 	static func draw(
 		size: CGSize,
@@ -198,7 +198,7 @@ extension UIImage {
 	
 }
 
-extension UITableViewCell {
+public extension UITableViewCell {
 	class var defaultReuseIdentifier: String {
 		return self.className()
 	}
@@ -209,7 +209,7 @@ extension UITableViewCell {
 	
 }
 
-extension UITableViewHeaderFooterView {
+public extension UITableViewHeaderFooterView {
 	class var defaultReuseIdentifier: String {
 		return self.className()
 	}
@@ -220,7 +220,7 @@ extension UITableViewHeaderFooterView {
 	
 }
 
-extension UICollectionViewCell {
+public extension UICollectionViewCell {
 	
 	class var defaultReuseIdentifier: String {
 		return self.className()

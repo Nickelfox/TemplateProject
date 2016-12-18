@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
 	
 	func image() -> UIImage {
 		UIGraphicsBeginImageContext(self.frame.size)

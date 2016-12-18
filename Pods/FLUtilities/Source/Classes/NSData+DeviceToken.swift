@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSData {
+public extension NSData {
 	
 	var deviceTokenString: String {
 		let characterSet: CharacterSet = CharacterSet( charactersIn: "<>" )		

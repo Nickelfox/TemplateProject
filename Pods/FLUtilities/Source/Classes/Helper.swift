@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIViewController {
 	
-	public func demo() {
+	func demo() {
 		print("Demo Successful")
 	}
 	

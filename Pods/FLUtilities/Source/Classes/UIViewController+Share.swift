@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
 	typealias CompletionBlock = (Bool) -> Void
 	func  share(text: String? = nil, urlStrings: [String]? = nil, images: [UIImage]? = nil, completion:CompletionBlock?  = nil) {
 		var activityItems = [AnyObject]()

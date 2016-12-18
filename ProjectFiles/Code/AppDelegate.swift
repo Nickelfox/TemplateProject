@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				debuglog("Call Success")
 			}
 		}
+				
 		return true
 	}
 

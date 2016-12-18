@@ -12,7 +12,7 @@ import UIKit
 // ActionInterface configures the characteristics of the action you want to show
 // All the properties, other than Title, has default properties so if you can just set the title for a quick use
 
-extension UIApplication {
+public extension UIApplication {
 	class var topController: UIViewController? {
 		if var topController = UIApplication.shared.keyWindow?.rootViewController {
 			while let presentedViewController = topController.presentedViewController {
@@ -24,14 +24,14 @@ extension UIApplication {
 	}
 }
 
-struct ActionInterface {
+public struct ActionInterface {
 	// default value of "id" is "title"
 	// you can set your own id as well for uniquesness
 	
-	var id: AnyObject!
-	var title: String = ""
-	var style: UIAlertActionStyle = .default
-	var alertAction: UIAlertAction!
+	public var id: AnyObject!
+	public var title: String = ""
+	public var style: UIAlertActionStyle = .default
+	public var alertAction: UIAlertAction!
 	
 	init(id: AnyObject? = nil, title: String, style: UIAlertActionStyle = .default) {
 		self.id = id ?? title as AnyObject!
@@ -40,9 +40,9 @@ struct ActionInterface {
 	}
 }
 
-typealias AlertHandler = (ActionInterface) -> Void
+public typealias AlertHandler = (ActionInterface) -> Void
 
-extension UIAlertController {
+public extension UIAlertController {
 	class func showAlertForMessage(message: String) {
 		let okActionInterface = ActionInterface(title: NSLocalizedString("Ok", comment: ""))
 		
@@ -117,7 +117,7 @@ extension UIAlertController {
 	}
 }
 
-extension UIViewController {
+public extension UIViewController {
 	
 	func showErrorAlert(error: NSError) {
 		self.showErrorAlert(message: error.localizedDescription)

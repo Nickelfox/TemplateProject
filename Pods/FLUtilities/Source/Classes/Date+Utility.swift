@@ -9,7 +9,8 @@
 import Foundation
 
 let calendar = Calendar.current
-extension Date {
+
+public extension Date {
 	
 	func add(months: Int) -> Date {
 		var dateComponents = DateComponents()
