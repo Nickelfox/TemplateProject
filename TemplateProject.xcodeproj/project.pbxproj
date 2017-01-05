@@ -22,8 +22,6 @@
 		6D1659B61E0684E50032395D /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1659B51E0684E50032395D /* UIView+Helper.swift */; };
 		6D1659B81E0685950032395D /* Date+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1659B71E0685950032395D /* Date+Helper.swift */; };
 		6D1659BA1E0686710032395D /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1659B91E0686710032395D /* AppUtility.swift */; };
-		6D1659BD1E0686E20032395D /* CrashLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1659BC1E0686E20032395D /* CrashLogger.swift */; };
-		6D1659C01E0689FD0032395D /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1659BF1E0689FD0032395D /* Analytics.swift */; };
 		6D1659C71E068CD90032395D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1659C61E068CD90032395D /* ImageView.swift */; };
 		6DCB36A91E053E28001C29FD /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCB36A01E053E28001C29FD /* Network.framework */; };
 		6DCB36B01E053E28001C29FD /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36AF1E053E28001C29FD /* NetworkTests.swift */; };
@@ -52,6 +50,8 @@
 		6DCB36FF1E055270001C29FD /* Model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCB36E91E055270001C29FD /* Model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6DCB37071E055298001C29FD /* DemoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB37061E055298001C29FD /* DemoObject.swift */; };
 		6DCD50B41E1E69AE00A9469B /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCB36A01E053E28001C29FD /* Network.framework */; };
+		6DCD50B91E1E6C7900A9469B /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD50B61E1E6C7900A9469B /* Analytics.swift */; };
+		6DCD50BA1E1E6C7900A9469B /* CrashLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD50B81E1E6C7900A9469B /* CrashLogger.swift */; };
 		AEEF2DC5C88EA534647D010B /* Pods_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F933958F89E1344D79442697 /* Pods_Network.framework */; };
 		F1D15E2DFA7647717642224D /* Pods_TemplateProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE2CD266A71586234445B2E /* Pods_TemplateProject.framework */; };
 /* End PBXBuildFile section */
@@ -138,8 +138,6 @@
 		6D1659B51E0684E50032395D /* UIView+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Helper.swift"; path = "Helpers/UIView+Helper.swift"; sourceTree = "<group>"; };
 		6D1659B71E0685950032395D /* Date+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Helper.swift"; path = "Helpers/Date+Helper.swift"; sourceTree = "<group>"; };
 		6D1659B91E0686710032395D /* AppUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppUtility.swift; path = Helpers/AppUtility.swift; sourceTree = "<group>"; };
-		6D1659BC1E0686E20032395D /* CrashLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrashLogger.swift; path = CrashLogs/CrashLogger.swift; sourceTree = "<group>"; };
-		6D1659BF1E0689FD0032395D /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Analytics.swift; path = Analytics/Analytics.swift; sourceTree = "<group>"; };
 		6D1659C61E068CD90032395D /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageView.swift; path = ImageView/ImageView.swift; sourceTree = "<group>"; };
 		6D61B8D21E03C33100BC1722 /* TemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCB36A01E053E28001C29FD /* Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +168,8 @@
 		6DCB36F81E055270001C29FD /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		6DCB36FA1E055270001C29FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DCB37061E055298001C29FD /* DemoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoObject.swift; sourceTree = "<group>"; };
+		6DCD50B61E1E6C7900A9469B /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		6DCD50B81E1E6C7900A9469B /* CrashLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashLogger.swift; sourceTree = "<group>"; };
 		F933958F89E1344D79442697 /* Pods_Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -246,8 +246,6 @@
 				6D1659931E0676AA0032395D /* AppDelegate.swift */,
 				6D1659A81E06772E0032395D /* Constants.swift */,
 				6D1659AA1E0677500032395D /* Configuration.swift */,
-				6D1659BE1E0689EA0032395D /* Analytics */,
-				6D1659BB1E0686C60032395D /* CrashLogs */,
 				6D1659AC1E0677660032395D /* Helpers */,
 				6D1659941E0676AA0032395D /* UI */,
 			);
@@ -310,22 +308,6 @@
 				6D1659B91E0686710032395D /* AppUtility.swift */,
 			);
 			name = Helpers;
-			sourceTree = "<group>";
-		};
-		6D1659BB1E0686C60032395D /* CrashLogs */ = {
-			isa = PBXGroup;
-			children = (
-				6D1659BC1E0686E20032395D /* CrashLogger.swift */,
-			);
-			name = CrashLogs;
-			sourceTree = "<group>";
-		};
-		6D1659BE1E0689EA0032395D /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				6D1659BF1E0689FD0032395D /* Analytics.swift */,
-			);
-			name = Analytics;
 			sourceTree = "<group>";
 		};
 		6D1659C51E068CC90032395D /* ImageView */ = {
@@ -414,6 +396,8 @@
 		6DCB36EA1E055270001C29FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6DCD50B51E1E6C7900A9469B /* Analytics */,
+				6DCD50B71E1E6C7900A9469B /* CrashLogs */,
 				6DCB36EB1E055270001C29FD /* Model.h */,
 				6DCB36EC1E055270001C29FD /* Info.plist */,
 				6DCB37061E055298001C29FD /* DemoObject.swift */,
@@ -428,6 +412,22 @@
 				6DCB36FA1E055270001C29FD /* Info.plist */,
 			);
 			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		6DCD50B51E1E6C7900A9469B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				6DCD50B61E1E6C7900A9469B /* Analytics.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		6DCD50B71E1E6C7900A9469B /* CrashLogs */ = {
+			isa = PBXGroup;
+			children = (
+				6DCD50B81E1E6C7900A9469B /* CrashLogger.swift */,
+			);
+			path = CrashLogs;
 			sourceTree = "<group>";
 		};
 		6DF552731E03C70B0044CF0D /* Frameworks */ = {
@@ -748,14 +748,12 @@
 			files = (
 				6D1659C71E068CD90032395D /* ImageView.swift in Sources */,
 				6D1659B41E0677F20032395D /* NavigationItem.swift in Sources */,
-				6D1659BD1E0686E20032395D /* CrashLogger.swift in Sources */,
 				6D1659B01E06779A0032395D /* Fonts.swift in Sources */,
 				6D1659A31E0676AA0032395D /* ViewController.swift in Sources */,
 				6D1659AE1E0677830032395D /* Colors.swift in Sources */,
 				6D1659B61E0684E50032395D /* UIView+Helper.swift in Sources */,
 				6D1659B21E0677E20032395D /* NavigationBar.swift in Sources */,
 				6D1659AB1E0677500032395D /* Configuration.swift in Sources */,
-				6D1659C01E0689FD0032395D /* Analytics.swift in Sources */,
 				6D1659B81E0685950032395D /* Date+Helper.swift in Sources */,
 				6D1659BA1E0686710032395D /* AppUtility.swift in Sources */,
 				6D1659A21E0676AA0032395D /* Loader.swift in Sources */,
@@ -798,6 +796,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DCD50B91E1E6C7900A9469B /* Analytics.swift in Sources */,
+				6DCD50BA1E1E6C7900A9469B /* CrashLogger.swift in Sources */,
 				6DCB37071E055298001C29FD /* DemoObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

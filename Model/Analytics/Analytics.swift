@@ -65,11 +65,11 @@ class Analytics: NSObject {
 		Analytics.trackTimeInLastSession(startTime: activeTime, endTime: Date())
 	}
 	
-	static func screen(_ title: String, properties: [String: AnyObject]? = nil) {
+	static func screen(_ title: String, properties: [String: Any]? = nil) {
 
 	}
 	
-	static func track(_ event: String, properties: [String: AnyObject]? = nil) {
+	static func track(_ event: String, properties: [String: Any]? = nil) {
 
 	}
 	
@@ -81,7 +81,7 @@ extension Analytics {
 	static func trackTimeInLastSession(startTime: Date, endTime: Date) {
 		let timeInterval = endTime.timeIntervalSince(startTime)
 		let timeIntervalInMinutes = Int(ceil(timeInterval / 60))
-		Analytics.track(timeInSessionKey, properties: [timeInSessionParamKey: "\(timeIntervalInMinutes)"  as AnyObject])
+		Analytics.track(timeInSessionKey, properties: [timeInSessionParamKey: "\(timeIntervalInMinutes)"])
 	}
 	
 	static func track(event: AnalyticsEvent) {
@@ -101,10 +101,10 @@ enum AnalyticsEvent: CustomStringConvertible {
 		}
 	}
 	
-	var parameters: [String: AnyObject]? {
+	var parameters: [String: Any]? {
 		switch self {
 		case .demo(let title):
-			return ["title": title as AnyObject]
+			return ["title": title]
 		}
 	}
 	
