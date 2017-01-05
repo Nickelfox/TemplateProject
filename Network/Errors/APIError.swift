@@ -10,16 +10,6 @@ import Foundation
 
 public protocol APIErrorProtocol {
 	var error: APIError { get }
-	
-	func error(code: APIErrorCode?, title: String?, message: String?, actionTitle: String?) -> APIError
-}
-
-extension APIErrorProtocol {
-
-	public func error(code: APIErrorCode? = nil, title: String? = nil, message: String? = nil, actionTitle: String? = nil) -> APIError {
-		return APIError(code: code, title: title, message: message, actionTitle: actionTitle)
-	}
-
 }
 
 public class APIError: DisplayableError {
@@ -30,11 +20,16 @@ public class APIError: DisplayableError {
 	public var message: String
 	public var actionTitle: String
 
-	public init(code: APIErrorCode? = nil, title: String?, message: String?, actionTitle: String?) {
-		self.code = code ?? APIErrorDefaults.code
-		self.title = title ?? APIErrorDefaults.title
-		self.message = message ?? APIErrorDefaults.message
-		self.actionTitle = actionTitle ?? APIErrorDefaults.actionTitle
+	public init(
+		code: APIErrorCode = APIErrorDefaults.code,
+		title: String = APIErrorDefaults.title,
+		message: String = APIErrorDefaults.message,
+		actionTitle: String = APIErrorDefaults.actionTitle
+		) {
+		self.code = code
+		self.title = title
+		self.message = message
+		self.actionTitle = actionTitle
 	}
 	
 }
@@ -44,8 +39,8 @@ public extension NSError {
 	var apiError: APIError {
 		return APIError(
 			title: self.domain,
-			message: self.userInfo[NSLocalizedDescriptionKey] as? String,
-			actionTitle: nil
+			message: (self.userInfo[NSLocalizedDescriptionKey] as? String) ?? APIErrorDefaults.message,
+			actionTitle: APIErrorDefaults.actionTitle
 		)
 	}
 	

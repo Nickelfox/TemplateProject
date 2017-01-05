@@ -27,9 +27,7 @@ public extension ErrorResponse {
 	
 	var error: APIError {
 		return APIError(
-			title: nil,
-			message: self.compiledErrorMessage,
-			actionTitle: nil
+			message: self.compiledErrorMessage
 		)
 	}
 	
