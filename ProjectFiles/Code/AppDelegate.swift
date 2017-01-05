@@ -15,12 +15,12 @@ import Model
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
+	let x = APIClient<AuthHeaders, ErrorResponse>()
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		let route = DemoRouter.demo
-		let x = APIClient<AuthHeaders>()
+		
 		x.request(route: route) { (d: DemoObject?, error) in
 			if let error = error {
 				errorlog(error.message)

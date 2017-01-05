@@ -50,15 +50,3 @@ public extension NSError {
 	}
 	
 }
-
-public extension ErrorResponse {
-
-	var apiError: APIError {
-		return APIError(
-			title: nil,
-			message: self.compiledErrorMessage,
-			actionTitle: nil
-		)
-	}
-
-}

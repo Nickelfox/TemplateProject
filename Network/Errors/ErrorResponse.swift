@@ -14,7 +14,11 @@ private let errorKey = "error"
 private let errorMessageKey = "message"
 private let codeKey = "status_code"
 
-public struct ErrorResponse {
+public protocol ErrorResponseProtocol: JSONParsing {
+	var apiError: APIError { get }
+}
+
+public struct ErrorResponse: ErrorResponseProtocol {
 	public let messages: [String]
 
 	public var compiledErrorMessage: String {
@@ -22,7 +26,19 @@ public struct ErrorResponse {
 	}
 }
 
-extension ErrorResponse: JSONParsing {
+public extension ErrorResponse {
+	
+	var apiError: APIError {
+		return APIError(
+			title: nil,
+			message: self.compiledErrorMessage,
+			actionTitle: nil
+		)
+	}
+	
+}
+
+extension ErrorResponse{
 	public static func parse(_ json: JSON) throws -> ErrorResponse {
 		let unknownError = APIErrorType.mapping(message: "Error Response can't be mapped.").error
 		if let infoDict = json[errorsKey].object as? [String: Any] {

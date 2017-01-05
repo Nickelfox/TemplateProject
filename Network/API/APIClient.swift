@@ -13,7 +13,7 @@ import Alamofire
 
 private let AuthHeadersKey = "AuthHeadersKey"
 
-public class APIClient<T: AuthHeadersProtocol> {
+public class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 
 	public init() {
 		self.networkManager = NetworkReachabilityManager()
@@ -31,7 +31,7 @@ public class APIClient<T: AuthHeadersProtocol> {
 		}
 	}
 
-	public var authHeaders: T? = nil {
+	public var authHeaders: U? = nil {
 		didSet {
 			guard let authHeaders = self.authHeaders else {
 				self.sessionManager.adapter = nil
@@ -53,7 +53,7 @@ public class APIClient<T: AuthHeadersProtocol> {
 	fileprivate let networkManager: NetworkReachabilityManager?
 	
 	fileprivate func parseAuthenticationHeaders (_ response: HTTPURLResponse) {
-		self.authHeaders = try? T.parse(JSON(response.allHeaderFields as AnyObject?))
+		self.authHeaders = try? U.parse(JSON(response.allHeaderFields as AnyObject?))
 	}
 
 	fileprivate var isNetworkReachable: Bool {
@@ -117,7 +117,7 @@ extension APIClient {
 		
 		//Make request
 		let request = self.sessionManager.request(route)
-		request.responseJSON { response in
+		request.responseJSON { [unowned self] response in
 			print("response is \(response)")
 			switch response.result {
 			case .success(let resultValue):
@@ -127,7 +127,7 @@ extension APIClient {
 						self.parseAuthenticationHeaders(httpResponse)
 					}
 					do {
-						let result: T = try parse(resultValue)
+						let result: T = try self.parse(resultValue)
 						completionHandler(result, nil)
 					} catch let apiError as APIError {
 						completionHandler(nil, apiError)
@@ -139,61 +139,61 @@ extension APIClient {
 					if code >= 200 && code <= 299 {
 						handleResult(resultValue: resultValue)
 					} else {
-						completionHandler(nil, parseError(resultValue, code))
+						completionHandler(nil, self.parseError(resultValue, code))
 					}
 				} else {
 					handleResult(resultValue: resultValue)
 				}
 			case .failure(let error):
-				completionHandler(nil, parseError(error as NSError?))
+				completionHandler(nil, self.parseError(error as NSError?))
 			}
 		}
 		return request
 	}
-	
-}
 
-fileprivate func parse<T: JSONParsing> (_ object: Any?) throws -> T {
-	let json = JSON(object as AnyObject?)
-	do {
+	fileprivate func parse<T: JSONParsing> (_ object: Any?) throws -> T {
+		let json = JSON(object as AnyObject?)
+		do {
 			//try parsing error response
-		if let errorResponse = try? ErrorResponse.parse(json) {
-			throw errorResponse.apiError
+			if let errorResponse = try? V.parse(json) {
+				throw errorResponse.apiError
+			}
+			return try T.parse(json)
+		} catch JSON.ParseError.noValue(let json) {
+			let desc = "JSON value not found at key path \(json.pathFromRoot)"
+			throw APIErrorType.mapping(message: desc).error
+		} catch JSON.ParseError.typeMismatch(let json) {
+			let desc = "JSON value type mismatch at key path \(json.pathFromRoot)"
+			throw APIErrorType.mapping(message: desc).error
+		} catch let apiError as APIError {
+			throw apiError
+		} catch {
+			throw APIErrorType.unknown.error
 		}
-		return try T.parse(json)
-	} catch JSON.ParseError.noValue(let json) {
-		let desc = "JSON value not found at key path \(json.pathFromRoot)"
-		throw APIErrorType.mapping(message: desc).error
-	} catch JSON.ParseError.typeMismatch(let json) {
-		let desc = "JSON value type mismatch at key path \(json.pathFromRoot)"
-		throw APIErrorType.mapping(message: desc).error
-	} catch let apiError as APIError {
-		throw apiError
-	} catch {
-		throw APIErrorType.unknown.error
 	}
-}
-
-
-fileprivate func parseError(_ object: Any?, _ statusCode: Int) -> APIError {
-	let json = JSON(object as AnyObject?)
-	if statusCode == 403 {
-		return APIErrorType.unauthorized.error
-	} else if statusCode == 503 {
-		return APIErrorType.serverDown.error
-	} else {
-		if let errorResponse = try? ErrorResponse.parse(json) {
-			return errorResponse.apiError
+	
+	
+	fileprivate func parseError(_ object: Any?, _ statusCode: Int) -> APIError {
+		let json = JSON(object as AnyObject?)
+		if statusCode == 403 {
+			return APIErrorType.unauthorized.error
+		} else if statusCode == 503 {
+			return APIErrorType.serverDown.error
+		} else {
+			if let errorResponse = try? V.parse(json) {
+				return errorResponse.apiError
+			} else {
+				return APIErrorType.unknown.error
+			}
+		}
+	}
+	
+	fileprivate func parseError(_ error: NSError?) -> APIError {
+		if let error = error {
+			return error.apiError
 		} else {
 			return APIErrorType.unknown.error
 		}
 	}
-}
 
-fileprivate func parseError(_ error: NSError?) -> APIError {
-	if let error = error {
-		return error.apiError
-	} else {
-		return APIErrorType.unknown.error
-	}
 }
