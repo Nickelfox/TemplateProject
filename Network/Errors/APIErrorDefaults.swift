@@ -9,7 +9,7 @@
 import Foundation
 
 public struct APIErrorDefaults {
-	static let code = APIErrorCode.other
+	static let code = APIErrorCode.unknown
 	static let title = "Error"
 	static let message = "An unknown error has occured."
 	static let actionTitle = "Ok"

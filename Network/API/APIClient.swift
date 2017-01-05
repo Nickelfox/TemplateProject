@@ -122,12 +122,12 @@ extension APIClient {
 			switch response.result {
 			case .success(let resultValue):
 				//Parse Auth Headers
-				func handleResult(resultValue: Any) {
+				func handleResult(resultValue: Any, code: Int) {
 					if let httpResponse = response.response {
 						self.parseAuthenticationHeaders(httpResponse)
 					}
 					do {
-						let result: T = try self.parse(resultValue)
+						let result: T = try self.parse(resultValue, code)
 						completionHandler(result, nil)
 					} catch let apiError as APIError {
 						completionHandler(nil, apiError)
@@ -137,12 +137,12 @@ extension APIClient {
 				}
 				if let code = response.response?.statusCode {
 					if code >= 200 && code <= 299 {
-						handleResult(resultValue: resultValue)
+						handleResult(resultValue: resultValue, code: code)
 					} else {
 						completionHandler(nil, self.parseError(resultValue, code))
 					}
 				} else {
-					handleResult(resultValue: resultValue)
+					handleResult(resultValue: resultValue, code: 0)
 				}
 			case .failure(let error):
 				completionHandler(nil, self.parseError(error as NSError?))
@@ -151,11 +151,11 @@ extension APIClient {
 		return request
 	}
 
-	fileprivate func parse<T: JSONParsing> (_ object: Any?) throws -> T {
+	fileprivate func parse<T: JSONParsing> (_ object: Any?, _ statusCode: Int) throws -> T {
 		let json = JSON(object as AnyObject?)
 		do {
 			//try parsing error response
-			if let errorResponse = try? V.parse(json) {
+			if let errorResponse = try? V.parse(json, code: statusCode) {
 				throw errorResponse.error
 			}
 			return try T.parse(json)
@@ -180,7 +180,7 @@ extension APIClient {
 		} else if statusCode == 503 {
 			return APIErrorType.serverDown.error
 		} else {
-			if let errorResponse = try? V.parse(json) {
+			if let errorResponse = try? V.parse(json, code: statusCode) {
 				return errorResponse.error
 			} else {
 				return APIErrorType.unknown.error

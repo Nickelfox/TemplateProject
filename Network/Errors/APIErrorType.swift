@@ -8,12 +8,13 @@
 
 import Foundation
 
-public enum APIErrorCode: Int {
-	case other = 1000
-	case noInternet = 1001
-	case mapping = 1002
-	case unauthorized = 1003
-	case serverDown = 1004
+public enum APIErrorCode {
+	case other(code: Int)
+	case noInternet
+	case mapping
+	case unauthorized
+	case serverDown
+	case unknown
 }
 
 public enum APIErrorType: APIErrorProtocol {
@@ -35,15 +36,15 @@ public enum APIErrorType: APIErrorProtocol {
 			actionTitle = APIErrorDefaults.actionTitle
 			code = .mapping
 		case .noInternet:
-			message = "No Internet Connection! Check your internet connection"
+			message = "No Internet Connection! Check your internet connection."
 			code = .noInternet
 		case .unauthorized:
 			message = "Sorry! Your session has expired. Please login and try again."
 			code = .unauthorized
 		case .unknown:
-			code = .other
+			code = .unknown
 		case .serverDown:
-			message = "Sorry! Your servers are under maintenance right now. Please try again later."
+			message = "Sorry! Our servers are under maintenance right now. Please try again later."
 			code = .serverDown
 		}
 		return APIError(code: code, title: title, message: message, actionTitle: actionTitle)

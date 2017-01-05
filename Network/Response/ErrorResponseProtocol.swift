@@ -8,4 +8,6 @@
 
 import Foundation
 
-public protocol ErrorResponseProtocol: JSONParsing, APIErrorProtocol {}
+public protocol ErrorResponseProtocol: APIErrorProtocol {
+	static func parse(_ json: JSON, code: Int) throws -> Self
+}

@@ -38,6 +38,7 @@ public extension NSError {
 	
 	var apiError: APIError {
 		return APIError(
+			code: .other(code: self.code),
 			title: self.domain,
 			message: (self.userInfo[NSLocalizedDescriptionKey] as? String) ?? APIErrorDefaults.message,
 			actionTitle: APIErrorDefaults.actionTitle
