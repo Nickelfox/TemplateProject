@@ -9,7 +9,16 @@
 import Foundation
 import Alamofire
 
-public struct AuthHeaders {
+public protocol AuthHeadersProtocol: JSONParsing, RequestAdapter {
+	
+	var isValid: Bool { get }
+	
+	func toJSON() -> [String: String]
+	
+}
+
+
+public struct AuthHeaders: AuthHeadersProtocol {
 	let uid: String
 	let expiry: Date
 	let client: String
@@ -56,9 +65,7 @@ fileprivate func parseDateFromUnixTimestamp(_ json: JSON) throws -> Date {
 	return date
 }
 
-extension AuthHeaders: JSONParsing { }
-
-extension AuthHeaders: RequestAdapter {
+extension AuthHeaders {
 	public func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
 		var urlRequest = urlRequest
 		urlRequest.setValue(self.accessToken, forHTTPHeaderField: "Access-Token")
