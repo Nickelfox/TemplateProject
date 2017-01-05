@@ -13,14 +13,14 @@ import Alamofire
 
 private let AuthHeadersKey = "AuthHeadersKey"
 
-public class APIClient {
+public class APIClient<T: AuthHeadersProtocol> {
 
-	public static let sharedInstance: APIClient = {
-		let instance = APIClient()
-		let profileJSON = instance.currentProfile
-		instance.authHeaders = try? JSON(profileJSON as AnyObject?)^
-		return instance
-	}()
+	public init() {
+		self.networkManager = NetworkReachabilityManager()
+		self.sessionManager = SessionManager(configuration: URLSessionConfiguration.default)
+		let profileJSON = self.currentProfile
+		self.authHeaders = try? JSON(profileJSON as AnyObject?)^
+	}
 	
 	private var currentProfile: Any? {
 		get {
@@ -31,7 +31,7 @@ public class APIClient {
 		}
 	}
 
-	fileprivate var authHeaders: AuthHeaders? = nil {
+	public var authHeaders: T? = nil {
 		didSet {
 			guard let authHeaders = self.authHeaders else {
 				self.sessionManager.adapter = nil
@@ -52,13 +52,8 @@ public class APIClient {
 	fileprivate let sessionManager: SessionManager
 	fileprivate let networkManager: NetworkReachabilityManager?
 	
-	init() {
-		self.networkManager = NetworkReachabilityManager()
-		self.sessionManager = SessionManager(configuration: URLSessionConfiguration.default)
-	}
-
 	fileprivate func parseAuthenticationHeaders (_ response: HTTPURLResponse) {
-		self.authHeaders = try? AuthHeaders.parse(JSON(response.allHeaderFields as AnyObject?))
+		self.authHeaders = try? T.parse(JSON(response.allHeaderFields as AnyObject?))
 	}
 
 	fileprivate var isNetworkReachable: Bool {

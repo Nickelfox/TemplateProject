@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		let route = DemoRouter.demo
-		APIClient.sharedInstance.request(route: route) { (d: DemoObject?, error) in
+		let x = APIClient<AuthHeaders>()
+		x.request(route: route) { (d: DemoObject?, error) in
 			if let error = error {
 				errorlog(error.message)
 			} else {
