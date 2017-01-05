@@ -51,6 +51,7 @@
 		6DCB36FE1E055270001C29FD /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCB36E91E055270001C29FD /* Model.framework */; };
 		6DCB36FF1E055270001C29FD /* Model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCB36E91E055270001C29FD /* Model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6DCB37071E055298001C29FD /* DemoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB37061E055298001C29FD /* DemoObject.swift */; };
+		6DCD50B41E1E69AE00A9469B /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCB36A01E053E28001C29FD /* Network.framework */; };
 		AEEF2DC5C88EA534647D010B /* Pods_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F933958F89E1344D79442697 /* Pods_Network.framework */; };
 		F1D15E2DFA7647717642224D /* Pods_TemplateProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE2CD266A71586234445B2E /* Pods_TemplateProject.framework */; };
 /* End PBXBuildFile section */
@@ -203,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DCD50B41E1E69AE00A9469B /* Network.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +567,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Nickelfox;
 				TargetAttributes = {
 					6D61B8D11E03C33100BC1722 = {
@@ -1044,7 +1046,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = NY45473NT8;
 				INFOPLIST_FILE = NetworkTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.-.NetworkTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1059,7 +1060,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = NY45473NT8;
 				INFOPLIST_FILE = NetworkTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.-.NetworkTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1123,7 +1123,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = NY45473NT8;
 				INFOPLIST_FILE = ModelTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.-.ModelTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1138,7 +1137,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = NY45473NT8;
 				INFOPLIST_FILE = ModelTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nickelfox.-.ModelTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
