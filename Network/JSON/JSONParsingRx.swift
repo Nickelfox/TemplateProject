@@ -7,6 +7,7 @@
 //
 
 import Foundation
+/*
 import ReactiveSwift
 
 protocol JSONParsingRx: JSONParsing {
@@ -32,3 +33,4 @@ extension JSONParsingRx {
 		}
 	}
 }
+*/

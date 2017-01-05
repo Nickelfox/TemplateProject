@@ -8,20 +8,19 @@
 
 import UIKit
 
-private let DefaultTitle = "Error"
-private let DefaultMessage = "An unknown error occured."
-private let DefaultButtonTitle = "Ok"
-
 private class BasicError: DisplayableError {
 
 	fileprivate var title: String
 	fileprivate var message: String
 	fileprivate var actionTitle: String
 
-	init(title: String?, message: String?, actionTitle: String?) {
-		self.title = title ?? DefaultTitle
-		self.message = message ?? DefaultMessage
-		self.actionTitle = actionTitle ?? DefaultButtonTitle
+	init(title: String = APIErrorDefaults.title,
+	     message: String = APIErrorDefaults.message,
+	     actionTitle: String = APIErrorDefaults.actionTitle
+		) {
+		self.title = title
+		self.message = message
+		self.actionTitle = actionTitle
 	}
 }
 
@@ -32,8 +31,12 @@ extension BasicError: CustomStringConvertible {
 }
 
 public extension UIViewController {
-	func presentError(withTitle title: String? = nil, description: String? = nil,
-				actionTitle: String? = nil, animated: Bool = true, completion: (() -> ())? = nil) {
+	func presentError(
+		title: String = APIErrorDefaults.title,
+		description: String = APIErrorDefaults.message,
+		actionTitle: String = APIErrorDefaults.actionTitle,
+		animated: Bool = true,
+		completion: (() -> ())? = nil) {
 		self.presentError(
 			BasicError(
 				title: title,

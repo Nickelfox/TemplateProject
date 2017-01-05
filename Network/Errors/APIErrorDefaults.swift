@@ -11,7 +11,7 @@ import Foundation
 public struct APIErrorDefaults {
 	static let code = APIErrorCode.other
 	static let title = "Error"
-	static let message = "An unknown error has occured"
+	static let message = "An unknown error has occured."
 	static let actionTitle = "Ok"
 	
 	static let mappingErrorTitle = "Mapping Error"
