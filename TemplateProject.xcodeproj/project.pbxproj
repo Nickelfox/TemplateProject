@@ -23,6 +23,9 @@
 		6D1659B81E0685950032395D /* Date+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1659B71E0685950032395D /* Date+Helper.swift */; };
 		6D1659BA1E0686710032395D /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1659B91E0686710032395D /* AppUtility.swift */; };
 		6D1659C71E068CD90032395D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1659C61E068CD90032395D /* ImageView.swift */; };
+		6D5FE0791E1EAE0500720806 /* DemoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FE0781E1EAE0500720806 /* DemoRouter.swift */; };
+		6D5FE07B1E1EAE3000720806 /* AuthHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FE07A1E1EAE3000720806 /* AuthHeaders.swift */; };
+		6D5FE07D1E1EAE5400720806 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FE07C1E1EAE5400720806 /* ErrorResponse.swift */; };
 		6DCB36A91E053E28001C29FD /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCB36A01E053E28001C29FD /* Network.framework */; };
 		6DCB36B01E053E28001C29FD /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36AF1E053E28001C29FD /* NetworkTests.swift */; };
 		6DCB36B21E053E28001C29FD /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCB36A21E053E28001C29FD /* Network.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,7 +33,7 @@
 		6DCB36B61E053E28001C29FD /* Network.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCB36A01E053E28001C29FD /* Network.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6DCB36D21E054137001C29FD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36C01E054137001C29FD /* APIClient.swift */; };
 		6DCB36D31E054137001C29FD /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36C11E054137001C29FD /* APIRouter.swift */; };
-		6DCB36D41E054137001C29FD /* AuthHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36C21E054137001C29FD /* AuthHeaders.swift */; };
+		6DCB36D41E054137001C29FD /* AuthHeadersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36C21E054137001C29FD /* AuthHeadersProtocol.swift */; };
 		6DCB36D51E054137001C29FD /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36C31E054137001C29FD /* JSON.swift */; };
 		6DCB36D61E054137001C29FD /* JSONParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36C41E054137001C29FD /* JSONParsing.swift */; };
 		6DCB36D81E054137001C29FD /* ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36C61E054137001C29FD /* ListResponse.swift */; };
@@ -39,10 +42,9 @@
 		6DCB36DB1E054137001C29FD /* APIErrorDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36CA1E054137001C29FD /* APIErrorDefaults.swift */; };
 		6DCB36DC1E054137001C29FD /* APIErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36CB1E054137001C29FD /* APIErrorType.swift */; };
 		6DCB36DD1E054137001C29FD /* DisplayableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36CC1E054137001C29FD /* DisplayableError.swift */; };
-		6DCB36DE1E054137001C29FD /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36CD1E054137001C29FD /* ErrorResponse.swift */; };
+		6DCB36DE1E054137001C29FD /* ErrorResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36CD1E054137001C29FD /* ErrorResponseProtocol.swift */; };
 		6DCB36DF1E054137001C29FD /* UIAlertController+DisplayableErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36CE1E054137001C29FD /* UIAlertController+DisplayableErrors.swift */; };
 		6DCB36E01E054137001C29FD /* UIViewController+DisplayableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36CF1E054137001C29FD /* UIViewController+DisplayableError.swift */; };
-		6DCB36E31E054826001C29FD /* DemoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36E21E054826001C29FD /* DemoRouter.swift */; };
 		6DCB36F21E055270001C29FD /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCB36E91E055270001C29FD /* Model.framework */; };
 		6DCB36F91E055270001C29FD /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB36F81E055270001C29FD /* ModelTests.swift */; };
 		6DCB36FB1E055270001C29FD /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCB36EB1E055270001C29FD /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,6 +55,7 @@
 		6DCD50BA1E1E6C7900A9469B /* CrashLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD50B81E1E6C7900A9469B /* CrashLogger.swift */; };
 		6DCD50BD1E1E6DFA00A9469B /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD50BC1E1E6DFA00A9469B /* DataModel.swift */; };
 		6DCD50C21E1E6E2900A9469B /* DemoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD50C11E1E6E2900A9469B /* DemoObject.swift */; };
+		89A3936C94736767F2000AE3 /* Pods_Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855F5FD9FC253DCC9CC3736F /* Pods_Model.framework */; };
 		AEEF2DC5C88EA534647D010B /* Pods_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F933958F89E1344D79442697 /* Pods_Network.framework */; };
 		F1D15E2DFA7647717642224D /* Pods_TemplateProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE2CD266A71586234445B2E /* Pods_TemplateProject.framework */; };
 /* End PBXBuildFile section */
@@ -140,6 +143,9 @@
 		6D1659B71E0685950032395D /* Date+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Helper.swift"; path = "Helpers/Date+Helper.swift"; sourceTree = "<group>"; };
 		6D1659B91E0686710032395D /* AppUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppUtility.swift; path = Helpers/AppUtility.swift; sourceTree = "<group>"; };
 		6D1659C61E068CD90032395D /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageView.swift; path = ImageView/ImageView.swift; sourceTree = "<group>"; };
+		6D5FE0781E1EAE0500720806 /* DemoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoRouter.swift; path = API/DemoRouter.swift; sourceTree = "<group>"; };
+		6D5FE07A1E1EAE3000720806 /* AuthHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthHeaders.swift; path = API/AuthHeaders.swift; sourceTree = "<group>"; };
+		6D5FE07C1E1EAE5400720806 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorResponse.swift; path = API/ErrorResponse.swift; sourceTree = "<group>"; };
 		6D61B8D21E03C33100BC1722 /* TemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCB36A01E053E28001C29FD /* Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCB36A21E053E28001C29FD /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
@@ -149,7 +155,7 @@
 		6DCB36B11E053E28001C29FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DCB36C01E054137001C29FD /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		6DCB36C11E054137001C29FD /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
-		6DCB36C21E054137001C29FD /* AuthHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHeaders.swift; sourceTree = "<group>"; };
+		6DCB36C21E054137001C29FD /* AuthHeadersProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHeadersProtocol.swift; sourceTree = "<group>"; };
 		6DCB36C31E054137001C29FD /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		6DCB36C41E054137001C29FD /* JSONParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsing.swift; sourceTree = "<group>"; };
 		6DCB36C61E054137001C29FD /* ListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResponse.swift; sourceTree = "<group>"; };
@@ -158,10 +164,9 @@
 		6DCB36CA1E054137001C29FD /* APIErrorDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorDefaults.swift; sourceTree = "<group>"; };
 		6DCB36CB1E054137001C29FD /* APIErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorType.swift; sourceTree = "<group>"; };
 		6DCB36CC1E054137001C29FD /* DisplayableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayableError.swift; sourceTree = "<group>"; };
-		6DCB36CD1E054137001C29FD /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		6DCB36CD1E054137001C29FD /* ErrorResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponseProtocol.swift; sourceTree = "<group>"; };
 		6DCB36CE1E054137001C29FD /* UIAlertController+DisplayableErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+DisplayableErrors.swift"; sourceTree = "<group>"; };
 		6DCB36CF1E054137001C29FD /* UIViewController+DisplayableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DisplayableError.swift"; sourceTree = "<group>"; };
-		6DCB36E21E054826001C29FD /* DemoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoRouter.swift; path = Routers/DemoRouter.swift; sourceTree = "<group>"; };
 		6DCB36E91E055270001C29FD /* Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCB36EB1E055270001C29FD /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		6DCB36EC1E055270001C29FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,6 +177,9 @@
 		6DCD50B81E1E6C7900A9469B /* CrashLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashLogger.swift; sourceTree = "<group>"; };
 		6DCD50BC1E1E6DFA00A9469B /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = DataModel/DataModel.swift; sourceTree = "<group>"; };
 		6DCD50C11E1E6E2900A9469B /* DemoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoObject.swift; sourceTree = "<group>"; };
+		7EEE9205FBB0EC796E89C607 /* Pods-Model.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.release.xcconfig"; path = "Pods/Target Support Files/Pods-Model/Pods-Model.release.xcconfig"; sourceTree = "<group>"; };
+		855F5FD9FC253DCC9CC3736F /* Pods_Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC6D5862144EE19F2AF5A05E /* Pods-Model.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Model/Pods-Model.debug.xcconfig"; sourceTree = "<group>"; };
 		F933958F89E1344D79442697 /* Pods_Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -207,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DCD50B41E1E69AE00A9469B /* Network.framework in Frameworks */,
+				89A3936C94736767F2000AE3 /* Pods_Model.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +237,8 @@
 				47D952802EB13826987C41AA /* Pods-TemplateProject.release.xcconfig */,
 				05376A0011826320C19E6AD5 /* Pods-Network.debug.xcconfig */,
 				678BE89D1E0283C38CF2D1E2 /* Pods-Network.release.xcconfig */,
+				BC6D5862144EE19F2AF5A05E /* Pods-Model.debug.xcconfig */,
+				7EEE9205FBB0EC796E89C607 /* Pods-Model.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -320,6 +331,16 @@
 			name = ImageView;
 			sourceTree = "<group>";
 		};
+		6D5FE0771E1EADE400720806 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6D5FE0781E1EAE0500720806 /* DemoRouter.swift */,
+				6D5FE07A1E1EAE3000720806 /* AuthHeaders.swift */,
+				6D5FE07C1E1EAE5400720806 /* ErrorResponse.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		6D61B8C91E03C33100BC1722 = {
 			isa = PBXGroup;
 			children = (
@@ -349,7 +370,6 @@
 		6DCB36A11E053E28001C29FD /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				6DCB36E21E054826001C29FD /* DemoRouter.swift */,
 				6DCB36BF1E054137001C29FD /* API */,
 				6DCB36C81E054137001C29FD /* Errors */,
 				6DCB36A21E053E28001C29FD /* Network.h */,
@@ -372,7 +392,7 @@
 			children = (
 				6DCB36C01E054137001C29FD /* APIClient.swift */,
 				6DCB36C11E054137001C29FD /* APIRouter.swift */,
-				6DCB36C21E054137001C29FD /* AuthHeaders.swift */,
+				6DCB36C21E054137001C29FD /* AuthHeadersProtocol.swift */,
 				6DCB36C31E054137001C29FD /* JSON.swift */,
 				6DCB36C41E054137001C29FD /* JSONParsing.swift */,
 				6DCB36C61E054137001C29FD /* ListResponse.swift */,
@@ -388,7 +408,7 @@
 				6DCB36CA1E054137001C29FD /* APIErrorDefaults.swift */,
 				6DCB36CB1E054137001C29FD /* APIErrorType.swift */,
 				6DCB36CC1E054137001C29FD /* DisplayableError.swift */,
-				6DCB36CD1E054137001C29FD /* ErrorResponse.swift */,
+				6DCB36CD1E054137001C29FD /* ErrorResponseProtocol.swift */,
 				6DCB36CE1E054137001C29FD /* UIAlertController+DisplayableErrors.swift */,
 				6DCB36CF1E054137001C29FD /* UIViewController+DisplayableError.swift */,
 			);
@@ -398,6 +418,7 @@
 		6DCB36EA1E055270001C29FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6D5FE0771E1EADE400720806 /* API */,
 				6DCD50BB1E1E6DE500A9469B /* DataModel */,
 				6DCD50B51E1E6C7900A9469B /* Analytics */,
 				6DCD50B71E1E6C7900A9469B /* CrashLogs */,
@@ -455,6 +476,7 @@
 			children = (
 				0AE2CD266A71586234445B2E /* Pods_TemplateProject.framework */,
 				F933958F89E1344D79442697 /* Pods_Network.framework */,
+				855F5FD9FC253DCC9CC3736F /* Pods_Model.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -547,10 +569,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DCB37001E055270001C29FD /* Build configuration list for PBXNativeTarget "Model" */;
 			buildPhases = (
+				32E24EEBE08C743996FA744D /* [CP] Check Pods Manifest.lock */,
 				6DCB36E41E055270001C29FD /* Sources */,
 				6DCB36E51E055270001C29FD /* Frameworks */,
 				6DCB36E61E055270001C29FD /* Headers */,
 				6DCB36E71E055270001C29FD /* Resources */,
+				98F4B0F44CFC0AE9B6739831 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -699,6 +723,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		32E24EEBE08C743996FA744D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		56C91102169257C35F8B447F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -712,6 +751,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		98F4B0F44CFC0AE9B6739831 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Model/Pods-Model-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9EA81B08945BC2B128B14215 /* [CP] Copy Pods Resources */ = {
@@ -790,17 +844,16 @@
 				6DCB36D21E054137001C29FD /* APIClient.swift in Sources */,
 				6DCB36D81E054137001C29FD /* ListResponse.swift in Sources */,
 				6DCB36D61E054137001C29FD /* JSONParsing.swift in Sources */,
-				6DCB36D41E054137001C29FD /* AuthHeaders.swift in Sources */,
+				6DCB36D41E054137001C29FD /* AuthHeadersProtocol.swift in Sources */,
 				6DCB36D31E054137001C29FD /* APIRouter.swift in Sources */,
 				6DCB36D51E054137001C29FD /* JSON.swift in Sources */,
-				6DCB36E31E054826001C29FD /* DemoRouter.swift in Sources */,
 				6DCB36D91E054137001C29FD /* NoResponse.swift in Sources */,
 				6DCB36DA1E054137001C29FD /* APIError.swift in Sources */,
 				6DCB36DD1E054137001C29FD /* DisplayableError.swift in Sources */,
 				6DCB36DF1E054137001C29FD /* UIAlertController+DisplayableErrors.swift in Sources */,
 				6DCB36DC1E054137001C29FD /* APIErrorType.swift in Sources */,
 				6DCB36DB1E054137001C29FD /* APIErrorDefaults.swift in Sources */,
-				6DCB36DE1E054137001C29FD /* ErrorResponse.swift in Sources */,
+				6DCB36DE1E054137001C29FD /* ErrorResponseProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,7 +872,10 @@
 				6DCD50B91E1E6C7900A9469B /* Analytics.swift in Sources */,
 				6DCD50BD1E1E6DFA00A9469B /* DataModel.swift in Sources */,
 				6DCD50C21E1E6E2900A9469B /* DemoObject.swift in Sources */,
+				6D5FE0791E1EAE0500720806 /* DemoRouter.swift in Sources */,
+				6D5FE07B1E1EAE3000720806 /* AuthHeaders.swift in Sources */,
 				6DCD50BA1E1E6C7900A9469B /* CrashLogger.swift in Sources */,
+				6D5FE07D1E1EAE5400720806 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1091,6 +1147,7 @@
 		};
 		6DCB37011E055270001C29FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC6D5862144EE19F2AF5A05E /* Pods-Model.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1116,6 +1173,7 @@
 		};
 		6DCB37021E055270001C29FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EEE9205FBB0EC796E89C607 /* Pods-Model.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";

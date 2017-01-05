@@ -156,7 +156,7 @@ extension APIClient {
 		do {
 			//try parsing error response
 			if let errorResponse = try? V.parse(json) {
-				throw errorResponse.apiError
+				throw errorResponse.error
 			}
 			return try T.parse(json)
 		} catch JSON.ParseError.noValue(let json) {
@@ -181,7 +181,7 @@ extension APIClient {
 			return APIErrorType.serverDown.error
 		} else {
 			if let errorResponse = try? V.parse(json) {
-				return errorResponse.apiError
+				return errorResponse.error
 			} else {
 				return APIErrorType.unknown.error
 			}

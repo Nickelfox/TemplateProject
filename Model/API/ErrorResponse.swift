@@ -1,12 +1,13 @@
 //
 //  ErrorResponse.swift
-//  Network
+//  TemplateProject
 //
-//  Created by Ravindra Soni on 16/12/16.
-//  Copyright © 2016 Nickelfox. All rights reserved.
+//  Created by Ravindra Soni on 05/01/17.
+//  Copyright © 2017 Nickelfox. All rights reserved.
 //
 
 import Foundation
+import Network
 
 private let errorTypeKey = "error_type"
 private let errorsKey = "errors"
@@ -14,13 +15,9 @@ private let errorKey = "error"
 private let errorMessageKey = "message"
 private let codeKey = "status_code"
 
-public protocol ErrorResponseProtocol: JSONParsing {
-	var apiError: APIError { get }
-}
-
 public struct ErrorResponse: ErrorResponseProtocol {
 	public let messages: [String]
-
+	
 	public var compiledErrorMessage: String {
 		return self.messages.joined(separator: ",")
 	}
@@ -28,7 +25,7 @@ public struct ErrorResponse: ErrorResponseProtocol {
 
 public extension ErrorResponse {
 	
-	var apiError: APIError {
+	var error: APIError {
 		return APIError(
 			title: nil,
 			message: self.compiledErrorMessage,
@@ -66,4 +63,3 @@ extension ErrorResponse{
 		}
 	}
 }
-

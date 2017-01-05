@@ -1,22 +1,13 @@
 //
 //  AuthHeaders.swift
-//  Network
+//  TemplateProject
 //
-//  Created by Ravindra Soni on 16/12/16.
-//  Copyright © 2016 Nickelfox. All rights reserved.
+//  Created by Ravindra Soni on 05/01/17.
+//  Copyright © 2017 Nickelfox. All rights reserved.
 //
 
 import Foundation
-import Alamofire
-
-public protocol AuthHeadersProtocol: JSONParsing, RequestAdapter {
-	
-	var isValid: Bool { get }
-	
-	func toJSON() -> [String: String]
-	
-}
-
+import Network
 
 public struct AuthHeaders: AuthHeadersProtocol {
 	let uid: String
@@ -80,4 +71,3 @@ private let uidKey = "uid"
 private let expiryKey = "expiry"
 private let clientKey = "client"
 private let accessTokenKey = "access-token"
-

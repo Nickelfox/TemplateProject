@@ -30,7 +30,7 @@ public class APIError: DisplayableError {
 	public var message: String
 	public var actionTitle: String
 
-	init(code: APIErrorCode? = nil, title: String?, message: String?, actionTitle: String?) {
+	public init(code: APIErrorCode? = nil, title: String?, message: String?, actionTitle: String?) {
 		self.code = code ?? APIErrorDefaults.code
 		self.title = title ?? APIErrorDefaults.title
 		self.message = message ?? APIErrorDefaults.message

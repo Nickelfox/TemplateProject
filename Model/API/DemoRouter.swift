@@ -1,13 +1,14 @@
 //
-//  Router.swift
-//  Network
+//  DemoRouter.swift
+//  TemplateProject
 //
-//  Created by Ravindra Soni on 24/10/16.
-//  Copyright © 2016 Nickelfox. All rights reserved.
+//  Created by Ravindra Soni on 05/01/17.
+//  Copyright © 2017 Nickelfox. All rights reserved.
 //
 
 import Foundation
 import Alamofire
+import Network
 
 public enum DemoRouter: APIRouter {
 	case demo

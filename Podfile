@@ -12,6 +12,12 @@ target :TemplateProject do
 	pod 'SDWebImage', '~> 3.8'
 end
 
+target :Model do
+	pod "FLUtilities", :git => 'https://github.com/Nickelfox/FLUtilities.git'
+	pod "FLLogs", :git => 'https://github.com/Nickelfox/FLLogs.git'
+	pod 'Alamofire', '~> 4.0'
+end
+
 target :Network do
 	pod "FLUtilities", :git => 'https://github.com/Nickelfox/FLUtilities.git'
 	pod "FLLogs", :git => 'https://github.com/Nickelfox/FLLogs.git'
