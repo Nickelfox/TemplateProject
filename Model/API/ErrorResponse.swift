@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Network
+import FLAPIClient
 
 private let errorTypeKey = "error_type"
 private let errorsKey = "errors"

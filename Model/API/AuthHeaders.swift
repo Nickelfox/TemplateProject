@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Network
+import FLAPIClient
 
 public struct AuthHeaders: AuthHeadersProtocol {
 	let uid: String

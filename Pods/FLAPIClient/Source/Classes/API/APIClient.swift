@@ -13,7 +13,7 @@ import Alamofire
 
 private let AuthHeadersKey = "AuthHeadersKey"
 
-public class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
+open class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 
 	public init() {
 		self.networkManager = NetworkReachabilityManager()
@@ -52,8 +52,9 @@ public class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 	fileprivate let sessionManager: SessionManager
 	fileprivate let networkManager: NetworkReachabilityManager?
 	
-	fileprivate func parseAuthenticationHeaders (_ response: HTTPURLResponse) {
-		self.authHeaders = try? U.parse(JSON(response.allHeaderFields as AnyObject?))
+	//Override this method in the subclass to st auth headers from the responses.
+	open func parseAuthenticationHeaders (_ response: HTTPURLResponse) {
+
 	}
 
 	fileprivate var isNetworkReachable: Bool {
@@ -63,7 +64,7 @@ public class APIClient<U: AuthHeadersProtocol, V: ErrorResponseProtocol> {
 		return networkManager.isReachable
 	}
 	
-	public func clearAuthHeaders() {
+	open func clearAuthHeaders() {
 		self.authHeaders = nil
 	}
 	

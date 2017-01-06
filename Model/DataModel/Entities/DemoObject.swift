@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Network
+import FLAPIClient
 
 final public class DemoObject {
 	

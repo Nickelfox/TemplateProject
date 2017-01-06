@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import FLAPIClient
+
+public typealias APICompletion<T> = (T?, APIError?) -> Void
+
+public class  DataModel {
+	
+	public static func test(completion: @escaping APICompletion<DemoObject>) {
+		
+		TestAPIClient.shared.request(
+			route: DemoRouter.demo,
+			completion: completion
+		)
+		
+	}
+	
+}

@@ -7,8 +7,7 @@
 //
 
 import Foundation
-//import Alamofire
-import Network
+import FLAPIClient
 
 public enum DemoRouter: APIRouter {
 	case demo

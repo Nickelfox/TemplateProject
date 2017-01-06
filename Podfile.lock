@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.2.0)
+  - FLAPIClient (0.1.0):
+    - Alamofire (~> 4.0)
   - FLLogs (0.1.0):
     - XCGLogger (~> 4.0)
   - FLUtilities (0.1.0)
@@ -12,19 +14,24 @@ PODS:
   - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - FLAPIClient (from `https://github.com/Nickelfox/FLAPIClient.git`)
   - FLLogs (from `https://github.com/Nickelfox/FLLogs.git`)
   - FLUtilities (from `https://github.com/Nickelfox/FLUtilities.git`)
   - MBProgressHUD (~> 1.0)
   - SDWebImage (~> 3.8)
 
 EXTERNAL SOURCES:
+  FLAPIClient:
+    :git: https://github.com/Nickelfox/FLAPIClient.git
   FLLogs:
     :git: https://github.com/Nickelfox/FLLogs.git
   FLUtilities:
     :git: https://github.com/Nickelfox/FLUtilities.git
 
 CHECKOUT OPTIONS:
+  FLAPIClient:
+    :commit: 347fbca425b3a3b04013bda9df9ad78c8882502e
+    :git: https://github.com/Nickelfox/FLAPIClient.git
   FLLogs:
     :commit: 99ec6c4bfe26de9c8000348e0523642f9a78f8f0
     :git: https://github.com/Nickelfox/FLLogs.git
@@ -34,12 +41,13 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  FLAPIClient: 050c44fa35dfb82562dec25d549212c87cb5f7cd
   FLLogs: b22371b46c3662bdbd17a98007258782a7c1d96e
   FLUtilities: 1b101734a35e894fd019e3fe6b430214c8fa3186
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 4a7151036c53a4dff8941841c6ca8378c6796041
+PODFILE CHECKSUM: f1b471f1f215dd5c3433528ed9182db92470585d
 
 COCOAPODS: 1.1.0.rc.2

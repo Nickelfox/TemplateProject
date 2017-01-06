@@ -1,0 +1,6 @@
+framework module FLAPIClient {
+  umbrella header "FLAPIClient-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -8,27 +8,24 @@
 
 import UIKit
 import FLLogs
-import Network
 import Model
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-	let x = APIClient<AuthHeaders, ErrorResponse>()
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-		let route = DemoRouter.demo
-		
-		x.request(route: route) { (d: DemoObject?, error) in
-			if let error = error {
-				errorlog(error.message)
+
+		DataModel.test { (object, error) in
+			if let _ = object {
+				debuglog("success")
 			} else {
-				debuglog("Call Success")
+				errorlog("error: \(error?.message)")
 			}
 		}
-				
+		
 		return true
 	}
 
