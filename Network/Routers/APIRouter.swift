@@ -9,6 +9,10 @@
 
 import Alamofire
 
+public typealias HTTPMethod = Alamofire.HTTPMethod
+public typealias URLRequestConvertible = Alamofire.URLRequestConvertible
+public typealias URLEncoding = Alamofire.URLEncoding
+
 public protocol APIRouter: URLRequestConvertible {
 	var method: HTTPMethod { get }
 	var path: String { get }

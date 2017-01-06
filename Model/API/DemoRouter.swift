@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Alamofire
+//import Alamofire
 import Network
 
 public enum DemoRouter: APIRouter {
