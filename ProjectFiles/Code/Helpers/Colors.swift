@@ -7,12 +7,11 @@
 //
 
 import Foundation
+import FLUtilities
 
 struct Colors {
 //Example
-//	static var greenColor: UIColor {
-//		return UIColor(hex: 0x65BA69)
-//	}
-
-	
+	static var greenColor: UIColor {
+		return UIColor(hex: 0x65BA69)
+	}
 }
